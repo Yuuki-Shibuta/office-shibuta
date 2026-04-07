@@ -151,6 +151,46 @@ def generate_post_html(post):
     <meta property="og:url" content="{SITE_URL}/blog/{post['slug']}.html">
     <meta property="og:site_name" content="しぶた行政書士事務所">
     <meta property="og:locale" content="ja_JP">
+    <meta property="og:image" content="{SITE_URL}/img/28154575_m.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="{SITE_URL}/img/28154575_m.jpg">
+
+    <script type="application/ld+json">
+    {{
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "{post['title']}",
+        "description": "{post['description']}",
+        "datePublished": "{post['date']}",
+        "dateModified": "{post['date']}",
+        "author": {{
+            "@type": "Person",
+            "name": "澁田 優希",
+            "url": "{SITE_URL}/about.html"
+        }},
+        "publisher": {{
+            "@type": "Organization",
+            "name": "しぶた行政書士事務所",
+            "url": "{SITE_URL}/"
+        }},
+        "mainEntityOfPage": {{
+            "@type": "WebPage",
+            "@id": "{SITE_URL}/blog/{post['slug']}.html"
+        }}
+    }}
+    </script>
+
+    <script type="application/ld+json">
+    {{
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {{"@type": "ListItem", "position": 1, "name": "トップ", "item": "{SITE_URL}/"}},
+            {{"@type": "ListItem", "position": 2, "name": "ブログ", "item": "{SITE_URL}/blog/"}},
+            {{"@type": "ListItem", "position": 3, "name": "{post['title']}"}}
+        ]
+    }}
+    </script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
