@@ -433,17 +433,15 @@ header.solid .hamburger span { background: var(--navy); }
 }
 
 .worry-card {
-    background: var(--bg);
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
+    background: var(--bg-light);
+    border: none;
+    border-radius: var(--radius-lg);
     padding: 28px 22px;
     text-align: center;
-    transition: all 0.3s;
 }
 
 .worry-card:hover {
-    border-color: var(--navy);
-    box-shadow: var(--shadow);
+    background: var(--navy-pale);
 }
 
 .worry-icon {
@@ -527,6 +525,22 @@ header.solid .hamburger span { background: var(--navy); }
     border-radius: 4px;
     margin-bottom: 12px;
     letter-spacing: 0.02em;
+}
+
+.service-card-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: var(--gold);
+    margin-top: 12px;
+    transition: gap 0.2s;
+}
+
+.service-card:hover .service-card-link {
+    gap: 8px;
+    color: var(--gold-dark);
 }
 
 .service-cta {
