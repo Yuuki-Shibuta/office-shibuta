@@ -939,6 +939,129 @@ header.solid .hamburger span { background: var(--navy); }
     line-height: 1.9;
 }
 
+/* ===== <details>版のFAQ（サービス個別ページ） ===== */
+details.faq-item {
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--gold);
+    border-radius: var(--radius);
+    background: var(--bg-white);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    transition: box-shadow 0.25s, border-color 0.25s;
+}
+
+details.faq-item:hover { box-shadow: var(--shadow-lg); }
+
+details.faq-item[open] {
+    border-left-color: var(--navy);
+    box-shadow: var(--shadow-lg);
+}
+
+details.faq-item > summary {
+    list-style: none;
+    cursor: pointer;
+    position: relative;
+    padding: 22px 62px 22px 70px;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--navy);
+    line-height: 1.6;
+    transition: background 0.2s;
+}
+
+details.faq-item > summary::-webkit-details-marker { display: none; }
+details.faq-item > summary:hover { background: var(--bg-light); }
+
+details.faq-item > summary::before {
+    content: "Q";
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: var(--gold);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Noto Serif JP", serif;
+    font-weight: 700;
+    font-size: 1rem;
+    box-shadow: 0 2px 6px rgba(184,146,46,0.25);
+}
+
+details.faq-item > summary::after {
+    content: "";
+    position: absolute;
+    right: 26px;
+    top: 50%;
+    width: 12px;
+    height: 12px;
+    border-right: 2px solid var(--navy);
+    border-bottom: 2px solid var(--navy);
+    transform: translateY(-75%) rotate(45deg);
+    transition: transform 0.3s;
+}
+
+details.faq-item[open] > summary::after {
+    transform: translateY(-25%) rotate(-135deg);
+}
+
+details.faq-item > p {
+    position: relative;
+    padding: 6px 26px 24px 70px;
+    margin: 0;
+    font-size: 0.94rem;
+    color: var(--text-light);
+    line-height: 1.95;
+    border-top: 1px dashed var(--border);
+    padding-top: 20px;
+}
+
+details.faq-item > p::before {
+    content: "A";
+    position: absolute;
+    left: 20px;
+    top: 18px;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: var(--navy);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Noto Serif JP", serif;
+    font-weight: 700;
+    font-size: 1rem;
+}
+
+@media (max-width: 640px) {
+    details.faq-item > summary {
+        padding: 18px 48px 18px 60px;
+        font-size: 0.92rem;
+    }
+    details.faq-item > summary::before {
+        left: 14px;
+        width: 32px;
+        height: 32px;
+        font-size: 0.9rem;
+    }
+    details.faq-item > p {
+        padding: 18px 20px 20px 60px;
+        font-size: 0.88rem;
+    }
+    details.faq-item > p::before {
+        left: 14px;
+        top: 16px;
+        width: 32px;
+        height: 32px;
+        font-size: 0.9rem;
+    }
+}
+
 /* ===== お問い合わせ ===== */
 .contact { background: var(--bg); }
 
