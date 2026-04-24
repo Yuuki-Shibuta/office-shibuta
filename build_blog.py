@@ -395,6 +395,96 @@ def generate_index_html(posts):
 </html>'''
 
 
+GBP_DRAFTS_DIR = os.path.join(BASE_DIR, 'gbp_drafts')
+
+
+def generate_gbp_post(post):
+    """Googleビジネスプロフィール投稿用のドラフトを生成"""
+    body_plain = post['body']
+    first_lead = ''
+    for para in body_plain.split('\n\n'):
+        para = para.strip()
+        if para and not para.startswith('【') and not para.startswith('・'):
+            first_lead = para.split('\n')[0]
+            break
+
+    url = f"{SITE_URL}/blog/{post['slug']}.html"
+
+    return f"""# GBP投稿ドラフト：{post['title']}
+
+【生成日】{post['date']}
+【対応ブログ】{url}
+
+=====================================
+■ 投稿見出し
+=====================================
+【新ブログ記事】{post['title']}
+
+=====================================
+■ 投稿本文（そのままコピペ可。約250〜350字）
+=====================================
+{first_lead}
+
+{post['description']}
+
+青森市で同じお悩みをお持ちの方は、詳しい内容をブログ記事でご覧ください。
+
+=====================================
+■ リンクボタン（CTA）※本文ではなくここで誘導
+=====================================
+ボタン種類：「詳細」
+リンク先：{url}
+
+=====================================
+■ 添付画像の候補
+=====================================
+・ブログ記事のアイキャッチ画像
+・事務所の外観/内観写真
+・代表の顔写真
+※人の顔/他社ロゴ/Googleマップのスクショは避ける
+
+=====================================
+■ 重要：GBP投稿ポリシー遵守ルール
+=====================================
+▼ 本文に書いてはいけないもの（削除されます）
+・電話番号（例：070-4697-7033）
+・住所（例：青森市長島2丁目13-1）
+・メールアドレス
+・URL文字列やリンク誘導の直書き（「下記リンクから」等）
+・過度な販促表現（「必ず」「最安」「唯一」など）
+
+▼ 書いて良いもの
+・記事の要点・読者への問いかけ
+・青森市・青森県などの地域名（自然な文脈で）
+・「初回相談無料」程度の事実訴求
+・記事を読むと何が分かるかの説明
+
+▼ 連絡先・URLはボタンと基本プロフィールで誘導する
+
+=====================================
+■ 投稿のコツ
+=====================================
+・投稿から1週間で新鮮度が落ちるので、継続的に追加投稿する
+・ハッシュタグは使わない（GBPでは効果がない）
+・同じ文面のコピペ連投は避ける（スパム判定）
+"""
+
+
+def update_gbp_drafts(posts):
+    """各ブログ記事から GBP 投稿ドラフトを生成"""
+    if not os.path.exists(GBP_DRAFTS_DIR):
+        os.makedirs(GBP_DRAFTS_DIR)
+
+    count = 0
+    for post in posts:
+        draft = generate_gbp_post(post)
+        draft_path = os.path.join(GBP_DRAFTS_DIR, f"{post['slug']}.md")
+        with open(draft_path, 'w', encoding='utf-8') as f:
+            f.write(draft)
+        count += 1
+    print(f'  gbp_drafts/ にGBP投稿ドラフトを {count} 件生成しました')
+
+
 def update_sitemap(posts):
     """sitemap.xml にブログ記事とサービスページを追加"""
     urls = [
@@ -492,8 +582,12 @@ def main():
     # サイトマップを更新
     update_sitemap(posts)
 
+    # GBP投稿ドラフトを生成
+    update_gbp_drafts(posts)
+
     print()
     print(f'=== 完了！{len(posts)} 件の記事を生成しました ===')
+    print(f'    GBP投稿ドラフトは gbp_drafts/ フォルダに保存されました')
 
 
 if __name__ == '__main__':
