@@ -270,6 +270,17 @@ def generate_post_html(post):
     </div>
 </footer>
 
+<a href="tel:070-4697-7033" class="fixed-call-btn" aria-label="電話でお問い合わせ">
+    <div class="fcb-row">
+        <span class="fcb-icon">📞</span>
+        <div>
+            <span class="fcb-label">無料相談</span>
+            <span class="fcb-number">070-4697-7033</span>
+            <span class="fcb-hours">平日 10:00〜17:00</span>
+        </div>
+    </div>
+</a>
+
 <script>
     function toggleNav() {{ document.getElementById('mainNav').classList.toggle('open'); }}
     document.querySelectorAll('#mainNav a').forEach(a => {{
@@ -383,6 +394,17 @@ def generate_index_html(posts):
         </div>
     </div>
 </footer>
+
+<a href="tel:070-4697-7033" class="fixed-call-btn" aria-label="電話でお問い合わせ">
+    <div class="fcb-row">
+        <span class="fcb-icon">📞</span>
+        <div>
+            <span class="fcb-label">無料相談</span>
+            <span class="fcb-number">070-4697-7033</span>
+            <span class="fcb-hours">平日 10:00〜17:00</span>
+        </div>
+    </div>
+</a>
 
 <script>
     function toggleNav() {{ document.getElementById('mainNav').classList.toggle('open'); }}
