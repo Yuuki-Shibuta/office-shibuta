@@ -396,13 +396,22 @@ def generate_index_html(posts):
 
 
 def update_sitemap(posts):
-    """sitemap.xml にブログ記事を追加"""
+    """sitemap.xml にブログ記事とサービスページを追加"""
     urls = [
         ('/', '1.0'),
         ('/services.html', '0.9'),
         ('/about.html', '0.8'),
-        ('/blog/', '0.8'),
     ]
+
+    # services/ 配下の個別サービスページを自動検出
+    services_dir = os.path.join(BASE_DIR, 'services')
+    if os.path.isdir(services_dir):
+        service_files = sorted(glob.glob(os.path.join(services_dir, '*.html')))
+        for sf in service_files:
+            slug = os.path.basename(sf)
+            urls.append((f'/services/{slug}', '0.8'))
+
+    urls.append(('/blog/', '0.8'))
     for post in sorted(posts, key=lambda p: p['date'], reverse=True):
         urls.append((f"/blog/{post['slug']}.html", '0.6'))
 
