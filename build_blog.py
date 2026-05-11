@@ -315,12 +315,12 @@ def generate_index_html(posts):
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ブログ | しぶた行政書士事務所</title>
-    <meta name="description" content="しぶた行政書士事務所のブログ。相続・遺言、建設業許可、法人設立など、暮らしとビジネスに役立つ情報をお届けします。">
+    <title>ブログ｜青森市の行政書士｜相続・遺言・建設業許可の最新情報｜しぶた行政書士事務所</title>
+    <meta name="description" content="青森市の行政書士しぶた事務所のブログ。相続・遺言、終活、建設業許可、法人設立、契約書など、暮らしとビジネスに役立つ最新情報を青森駅徒歩15分の行政書士がわかりやすく解説します。">
     <link rel="canonical" href="{SITE_URL}/blog/">
 
-    <meta property="og:title" content="ブログ｜しぶた行政書士事務所">
-    <meta property="og:description" content="相続・遺言、建設業許可、法人設立など、暮らしとビジネスに役立つ情報をお届けします。">
+    <meta property="og:title" content="ブログ｜青森市の行政書士｜相続・遺言・建設業許可の最新情報">
+    <meta property="og:description" content="青森市の行政書士しぶた事務所のブログ。相続・遺言、終活、建設業許可、法人設立、契約書など、暮らしとビジネスに役立つ最新情報をお届けします。">
     <meta property="og:type" content="website">
     <meta property="og:url" content="{SITE_URL}/blog/">
     <meta property="og:site_name" content="しぶた行政書士事務所">
