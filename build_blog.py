@@ -92,6 +92,9 @@ def text_to_html(text):
     for line in lines:
         line = line.rstrip()
 
+        # Markdown風の太字: **text** -> <strong>text</strong>
+        line = re.sub(r'\*\*(.+?)\*\*', r'<strong>\1</strong>', line)
+
         # 空行 → 段落区切り
         if not line:
             flush_paragraph()
