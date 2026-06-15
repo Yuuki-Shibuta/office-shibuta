@@ -1347,6 +1347,80 @@ footer {
     .section-header h2 { font-size: 1.35rem; }
 }
 
+/* ===== 関連サービスCTA ===== */
+.related-service-cta {
+    background: linear-gradient(135deg, #fff7e6 0%, #ffefd4 100%);
+    border-left: 4px solid var(--gold);
+    border-radius: 6px;
+    padding: 28px 32px;
+    margin: 48px 0 32px;
+}
+.related-service-cta h3 {
+    margin: 0 0 12px;
+    font-size: 1.15rem;
+    color: var(--navy);
+    border: none;
+    padding: 0;
+}
+.related-service-cta p {
+    margin: 0 0 18px;
+    color: var(--text);
+    font-size: 0.95rem;
+    line-height: 1.85;
+}
+
+/* ===== サービスページ末尾「他のサービス」 ===== */
+.other-services-block {
+    margin: 48px 0;
+    padding: 36px 0;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+}
+.other-services-block h3 {
+    margin: 0 0 20px;
+    font-size: 1.2rem;
+    color: var(--navy);
+    text-align: center;
+    border: none;
+    padding: 0;
+}
+.other-services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 14px;
+}
+.other-services-grid a {
+    display: block;
+    padding: 16px 18px;
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    text-decoration: none;
+    color: var(--navy);
+    font-weight: 500;
+    transition: transform 0.15s, box-shadow 0.15s, border-color 0.15s;
+}
+.other-services-grid a:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    border-color: var(--gold);
+}
+.other-services-grid a.featured {
+    background: linear-gradient(135deg, var(--navy) 0%, #1a3a5c 100%);
+    color: #fff;
+    border-color: var(--navy);
+}
+.other-services-grid a.featured:hover {
+    border-color: var(--gold);
+}
+.other-services-grid .label-small {
+    display: block;
+    font-size: 0.72rem;
+    opacity: 0.75;
+    margin-bottom: 4px;
+    font-weight: 400;
+}
+
 /* ===== モバイル固定 電話ボタン ===== */
 .fixed-call-btn {
     display: none;
