@@ -1116,7 +1116,7 @@ details.faq-item > p::before {
 
 .contact-method .icon { font-size: 1.8rem; margin-bottom: 10px; }
 .contact-method .label { font-size: 0.75rem; color: var(--text-muted); margin-bottom: 6px; }
-.contact-method .value { font-size: 1.1rem; font-weight: 700; color: var(--navy); }
+.contact-method .value { font-size: 1.1rem; font-weight: 700; color: var(--navy); word-break: break-all; overflow-wrap: anywhere; }
 .contact-method a { color: var(--navy); font-weight: 700; }
 .contact-hours { font-size: 0.78rem; color: var(--text-muted); margin-top: 8px; }
 
