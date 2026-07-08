@@ -1347,6 +1347,17 @@ footer {
     .section-header h2 { font-size: 1.35rem; }
 }
 
+/* ===== お電話ボックスの注記 ===== */
+.contact-note {
+    font-size: 0.75rem;
+    color: var(--text-light);
+    line-height: 1.7;
+    margin-top: 12px;
+    padding-top: 10px;
+    border-top: 1px dashed var(--border);
+    text-align: left;
+}
+
 /* ===== 関連サービスCTA ===== */
 .related-service-cta {
     background: linear-gradient(135deg, #fff7e6 0%, #ffefd4 100%);
@@ -1481,11 +1492,20 @@ footer {
     margin-top: 2px;
 }
 
+.fixed-call-btn .fcb-note {
+    display: block;
+    font-size: 0.62rem;
+    opacity: 0.9;
+    margin-top: 4px;
+    line-height: 1.4;
+    letter-spacing: 0.02em;
+}
+
 @media (max-width: 768px) {
     .fixed-call-btn {
         display: block;
     }
     body {
-        padding-bottom: 72px;
+        padding-bottom: 92px;
     }
 }

@@ -285,6 +285,7 @@ def generate_post_html(post):
             <span class="fcb-label">無料相談</span>
             <span class="fcb-number">070-4697-7033</span>
             <span class="fcb-hours">平日 10:00〜17:00</span>
+            <span class="fcb-note">※自動音声応答時もそのままお話しください</span>
         </div>
     </div>
 </a>
@@ -410,6 +411,7 @@ def generate_index_html(posts):
             <span class="fcb-label">無料相談</span>
             <span class="fcb-number">070-4697-7033</span>
             <span class="fcb-hours">平日 10:00〜17:00</span>
+            <span class="fcb-note">※自動音声応答時もそのままお話しください</span>
         </div>
     </div>
 </a>
